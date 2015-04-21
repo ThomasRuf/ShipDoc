@@ -1,0 +1,551 @@
+%--------------------
+% Macros for Journals
+%--------------------
+%\def\Journal#1#2#3#4{{#1} {\bf #2}, #3 (#4)}
+\def\Journal#1#2#3#4{{#1} {#2} (#3) #4}
+\def\ARN{\em Ann. Rev. Nucl. Part. Sci.}
+\def\CPC{\em Comp. Phys. Comm.}
+\def\EPC{{\em Eur. Phys. J.} C}
+\def\IJM{{\em Int. J. Mod. Phys.} A}
+\def\JPC{{\em Eur. Phys. J.} C}
+\def\JPG{{\em J. Phys.} G}
+\def\NCA{\em Nuovo Cimento}
+\def\NIM{\em Nucl. Instrum. Methods}
+\def\NIM{{\em Nucl. Instr. and Meth.} A}
+\def\NPB{{\em Nucl. Phys.} B}
+\def\PLB{{\em Phys. Lett.}  B}
+\def\PRE{\em Phys. Rep.}
+\def\PRD{{\em Phys. Rev.} D}
+\def\PRL{\em Phys. Rev. Lett.}
+\def\SJN{\em Sov. J. Nucl. Phys.}
+\def\SPJ{\em Sov. Phys. JETP}
+\def\ZPC{{\em Z. Phys.} C}
+\def\ZPX{\em Z. Phys.}
+
+\def\etal{\textit{et al.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Units
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\unit}[1]{\ensuremath{\rm\,#1}\xspace}          % {kg}
+
+%% Energy and momentum
+\newcommand{\tev}{\ensuremath{\mathrm{\,Te\kern -0.1em V}}\xspace}
+\newcommand{\gev}{\ensuremath{\mathrm{\,Ge\kern -0.1em V}}\xspace}
+\newcommand{\GeV}{\ensuremath{\mathrm{\,Ge\kern -0.1em V}}\xspace}
+\newcommand{\mev}{\ensuremath{\mathrm{\,Me\kern -0.1em V}}\xspace}
+\newcommand{\kev}{\ensuremath{\mathrm{\,ke\kern -0.1em V}}\xspace}
+\newcommand{\ev}{\ensuremath{\mathrm{\,e\kern -0.1em V}}\xspace}
+\newcommand{\gevc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\mevc}{\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\gevcc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c^2}}\xspace}
+\newcommand{\gevgevcccc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V^2\!/}c^4}}\xspace}
+\newcommand{\mevcc}{\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c^2}}\xspace}
+\newcommand{\phim}     { \ensuremath{\mathrm{ e^{i\varphi_M} } }\xspace}
+\newcommand{\phims}    { \ensuremath{\mathrm{ e^{-i\varphi_M} } }\xspace}
+\newcommand{\ii}{\ensuremath{i}}
+\newcommand{\mez}{\ensuremath{M_{12}}}
+\newcommand{\gez}{\ensuremath{\Gamma_{12}}}
+\newcommand{\vghost}   { \rule[-1ex]{0mm}{3.2ex}}
+\newcommand{\vghostu}   { \rule[0ex]{0mm}{2.5ex}}
+\newcommand{\vghostd}   { \rule[-1ex]{0mm}{0ex}}
+\newcommand{\vghostm}  { \rule[0ex]{0mm}{2.5ex}}
+\newcommand{\abag}{$\alpha$, $\beta$ and $\gamma$}
+\newcommand{\abg}{$\alpha$, $\beta$, $\gamma$}
+\newcommand{\dlam}     { \ensuremath{ \Delta \lambda} \xspace}
+\newcommand{\Exp}      { \ensuremath{ \mathrm{e}       }}
+\newcommand{\epsi}     { \ensuremath{\mathrm{\varepsilon_T}}}
+\newcommand{\phisw}    { \ensuremath{\mathrm{ \varphi_{SW} } }\xspace}
+\newcommand{\atan}     { \ensuremath{\mathrm{atan}}}
+\newcommand{\egq}      { \ensuremath{\mathrm{ e^{-\overline{\Gamma} \tau}}}}
+\newcommand{\nd}[1]{/\hspace{-0.6em} #1}
+\newcommand{\PKz}{\ensuremath{\mathrm{K^0}}}
+\newcommand{\PaKz}{\ensuremath{\mathrm{\overline{K}\mbox{}^0}}}
+\newcommand{\nn}{\nonumber}
+
+%------------------------------------------------------------------------------
+%       -> (anti-)something with correct hyphenation
+%------------------------------------------------------------------------------
+\newcommand{\Anti}[1]{\hbox{(anti-)}\discretionary{}{}{}#1}
+\newcommand{\anti}[1]{(anti\discretionary{-)}{}{)}#1}
+\newcommand{\CL}[1]{$#1\%$~C.L\xdotspace}
+%------------------------------------------------------------------------------
+%       -> vertical rule of width zero and variable height & depth
+%------------------------------------------------------------------------------
+\newcommand{\stru}[2]{%
+   \relax\ifmmode\hbox{\vrule height#1 depth#2 width0pt}%
+   \else\vrule height#1 depth#2 width0pt\fi}
+%------------------------------------------------------------------------------
+%       -> underline with resonable distance text - line
+%------------------------------------------------------------------------------
+\newcommand{\uline}[1]{$\underline{\hbox{#1\stru{0.pt}{.485ex}}}$}
+%------------------------------------------------------------------------------
+%       -> roman numbers (uppercase and lowercase)
+%------------------------------------------------------------------------------
+\newcommand{\Ronum}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ronum}[1]{\expandafter{\romannumeral#1}}
+%------------------------------------------------------------------------------
+%       -> shorthands for equation, figure, table, section references
+%          (require standard use of labels: eq-... for equations, cha-...
+%           for chapters, sec-... for (sub)sections, tab-... for tables
+%           and fig-... for figures)
+%------------------------------------------------------------------------------
+\newcommand{\eq}[1]{(\ref{eq-#1})}
+\newcommand{\eqsand}[2]{(\ref{eq-#1}) and~(\ref{eq-#2})}
+\newcommand{\eqsto}[2]{(\ref{eq-#1})--(\ref{eq-#2})}
+\newcommand{\eqstwo}[2]{(\ref{eq-#1},\ref{eq-#2})}
+\newcommand{\eqsthr}[3]{(\ref{eq-#1},\ref{eq-#2},\ref{eq-#3})}
+\newcommand{\eqsfou}[4]{(\ref{eq-#1},\ref{eq-#2},\ref{eq-#3},\ref{eq-#4})}
+\newcommand{\Eq}[1]{Equation~(\ref{eq-#1})}
+\newcommand{\Eqsto}[2]{Equations~(\ref{eq-#1})--(\ref{eq-#2})}
+\newcommand{\fig}[1]{Fig.~\ref{fig-#1}}
+\newcommand{\Fig}[1]{Figure~\ref{fig-#1}}
+\newcommand{\figand}[2]{Figs.~\ref{fig-#1} and~\ref{fig-#2}}
+\newcommand{\Figand}[2]{Figures~\ref{fig-#1} and~\ref{fig-#2}}
+\newcommand{\tab}[1]{Table~\ref{tab-#1}}
+\newcommand{\Tab}[1]{Table~\ref{tab-#1}}
+\newcommand{\taband}[2]{Tables~\ref{tab-#1} and~\ref{tab-#2}}
+\newcommand{\cha}[1]{Chap.~\ref{cha-#1}}
+\newcommand{\Cha}[1]{Chapter~\ref{cha-#1}}
+\newcommand{\sect}[1]{Sect.~\ref{sec-#1}}
+\newcommand{\Sect}[1]{Section~\ref{sec-#1}}
+\newcommand{\sectand}[2]{Sects.~\ref{sec-#1} and~\ref{sec-#2}}
+\newcommand{\sectto}[2]{Sects.~\ref{sec-#1} to~\ref{sec-#2}}
+\newcommand{\Sectand}[2]{Sections~\ref{sec-#1} and~\ref{sec-#2}}
+\newcommand{\Sectto}[2]{Sections~\ref{sec-#1} to~\ref{sec-#2}}
+%------------------------------------------------------------------------------
+%       -> log file message
+%------------------------------------------------------------------------------
+\newcommand{\LogMess}[1]{\typeout{^^J==> #1^^J}}
+%------------------------------------------------------------------------------
+%       Some special symbols and settings for math mode:
+%       ------------------------------------------------
+%       -> redefine mathbf
+%------------------------------------------------------------------------------
+\DeclareMathAlphabet{\mathbf}{OT1}{cmr}{bx}{sl}
+
+%------------------------------------------------------------------------------
+%       -> various other units
+%------------------------------------------------------------------------------
+\newcommand{\mb}{\,\text{mb}}
+\newcommand{\mub}{\,\upmu\text{b}}
+\newcommand{\nb}{\,\text{nb}}
+\newcommand{\pb}{\,\text{pb}}
+\newcommand{\fb}{\,\text{fb}}
+\newcommand{\mubi}{\,\upmu\text{b}^{-1}}
+\newcommand{\mbi}{\,\text{mb}^{-1}}
+\newcommand{\nbi}{\,\text{nb}^{-1}}
+\newcommand{\pbi}{\,\text{pb}^{-1}}
+\newcommand{\fbi}{\,\text{fb}^{-1}}
+\newcommand{\met}{\,\text{m}}
+\newcommand{\nm}{\,\text{nm}}
+\newcommand{\mum}{\,\upmu\text{m}}
+\newcommand{\mm}{\,\text{mm}}
+\newcommand{\cm}{\,\text{cm}}
+\newcommand{\km}{\,\text{km}}
+\newcommand{\Amp}{\,\text{A}}
+\newcommand{\nA}{\,\text{nA}}
+\newcommand{\muA}{\,\upmu\text{A}}
+\newcommand{\mA}{\,\text{mA}}
+\newcommand{\kA}{\,\text{kA}}
+\newcommand{\Hz}{\,\text{Hz}}
+\newcommand{\kHz}{\,\text{kHz}}
+\newcommand{\MHz}{\,\text{MHz}}
+\newcommand{\GHz}{\,\text{GHz}}
+\newcommand{\ppm}{\,\text{ppm}}
+\newcommand{\ppb}{\,\text{ppb}}
+\newcommand{\scd}{\,\text{s}}
+\newcommand{\ps}{\,\text{ps}}
+\newcommand{\ns}{\,\text{ns}}
+\newcommand{\mus}{\,\upmu\text{s}}
+\newcommand{\ms}{\,\text{ns}}
+\newcommand{\rad}{\,\text{rad}}
+\newcommand{\murad}{\,\upmu\text{rad}}
+\newcommand{\mrad}{\,\text{mrad}}
+\newcommand{\gra}{\,\text{g}}
+\newcommand{\pg}{\,\text{pg}}
+\newcommand{\nang}{\,\text{ng}}
+\newcommand{\mug}{\,\upmu\text{g}}
+\newcommand{\mg}{\,\text{mg}}
+\newcommand{\kg}{\,\text{kg}}
+\newcommand{\Tesla}{\,\text{T}}
+\newcommand{\Kelvin}{\,\text{K}}
+%------------------------------------------------------------------------------
+%       -> additional operators
+%------------------------------------------------------------------------------
+\newcommand{\odiv}{{\operatorname*{div}}}
+\newcommand{\ograd}{{\operatorname*{grad}}}
+\newcommand{\orot}{{\operatorname*{rot}}}
+\newcommand{\odiag}{{\operatorname*{diag}}}
+\newcommand{\ocov}{{\operatorname*{cov}}}
+%------------------------------------------------------------------------------
+%       -> fraction with slash instead of ratio bar
+%------------------------------------------------------------------------------
+\newcommand{\slashfrac}[2]{%
+  \raisebox{0.5ex}{\ensuremath #1}\kern-0.12em/\kern-0.08em
+  \raisebox{-.8ex}{\ensuremath #2}}
+%------------------------------------------------------------------------------
+%       -> shorthand for "integral limits below and above"
+%------------------------------------------------------------------------------
+\newcommand{\intl}{\int\limits}
+\newcommand{\ointl}{\oint\limits}
+%------------------------------------------------------------------------------
+%       -> d'Alembert operator
+%------------------------------------------------------------------------------
+\newcommand{\sqr}[3]{%
+    {\vcenter{\hrule height.#3ex\hbox{\vrule width.#2ex height#1ex
+     \kern#1ex\vrule width.#3ex}\hrule height.#2ex}}}
+\newcommand{\dalem}{\mathchoice\sqr{1.3}{08}{24}\sqr{1.4}{08}{24}
+                    \sqr{1.15}{07}{21}\sqr{1.0}{06}{18}\,}
+%------------------------------------------------------------------------------
+%       -> vectors and matrices
+%------------------------------------------------------------------------------
+\newcommand{\vect}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pvect}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\bvect}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\vvect}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Vvect}[1]{\begin{Vmatrix}#1\end{Vmatrix}}
+
+%% Math
+\newcommand{\abs}[1]{\ensuremath{\lvert#1\rvert}} % {x}
+\newcommand{\Real}{\ensuremath{\mathcal{R}e}\xspace}
+\newcommand{\Imag}{\ensuremath{\mathcal{I}m}\xspace}
+
+%% QM
+\newcommand{\bra}[1]{\ensuremath{\langle #1|}}               % {a}
+\newcommand{\ket}[1]{\ensuremath{|#1 \rangle}}               % {b}
+\newcommand{\braket}[2]{\ensuremath{\langle #1|#2 \rangle}} % {a}{b}
+\newcommand{\expect}[3]{\ensuremath{\langle #1| #2 |#3 \rangle}} % {a}{b}{c}
+%------------------------------------------------------------------------------
+%       -> antiparticles and particles with a bar in parentheses
+%------------------------------------------------------------------------------
+\newcommand{\widebar}[1]{%
+   \mkern1.5mu\overline{\mkern-1.5mu#1\mkern-1.mu}\mkern1.mu}
+\catcode`\@=11 % @ signs are now treated as letters
+\newcommand{\parenbar}{\mathpalette\p@renb@r}
+\def\p@renb@r#1#2{\vbox{%
+  \ifx#1\scriptscriptstyle \dimen@.7em\dimen@ii.2em\else
+  \ifx#1\scriptstyle \dimen@.8em\dimen@ii.25em\else
+  \dimen@1em\dimen@ii.4em\fi\fi \offinterlineskip
+  \ialign{\hfill##\hfill\cr
+    \vbox{\hrule width\dimen@ii}\cr
+    \noalign{\vskip-.3ex}%
+    \hbox to\dimen@{$\mathchar300\hfil\mathchar301$}\cr
+    \noalign{\vskip-.3ex}%
+    $#1#2$\cr}}}
+\catcode`\@=12 % @ signs are no longer letters
+\newcommand{\nuan}{\parenbar{\nu}}
+\newcommand{\nunubar}{\parenbar{\nu}}
+\newcommand{\ppbar}{\parenbar{p}}
+\newcommand{\qqbar}{\parenbar{q}}
+\newcommand{\pbar}{\widebar{p}}
+\newcommand{\nbar}{\widebar{n}}
+\newcommand{\qbar}{\widebar{q}}
+\newcommand{\dbar}{\widebar{d}}
+\newcommand{\ubar}{\widebar{u}}
+\newcommand{\sbar}{\widebar{s}}
+\newcommand{\cbar}{\widebar{c}}
+\newcommand{\bbar}{\widebar{b}}
+\newcommand{\tbar}{\widebar{t}}
+\newcommand{\nubar}{\widebar{\nu}}
+\newcommand{\Dbar}{\widebar{D}}
+\newcommand{\ebar}{\widebar{e}}
+\newcommand{\Ebar}{\widebar{e}}
+\newcommand{\Hebar}{\widebar{\text{He}}}
+\newcommand{\Cbar}{\widebar{\text{C}}}
+\newcommand{\Abar}{\widebar{\text{A}}}
+\newcommand{\Kbar}{\widebar{K}}
+\newcommand{\chibar}{\widebar{\chi}}
+\newcommand{\LQbar}{\widebar{\rm LQ}}
+%------------------------------------------------------------------------------
+%       -> small numbers
+%------------------------------------------------------------------------------
+\newcommand{\zero}{{\scriptscriptstyle 0}}
+\newcommand{\sone}{{\scriptscriptstyle 1}}
+\newcommand{\stwo}{{\scriptscriptstyle 2}}
+\newcommand{\sthr}{{\scriptscriptstyle 3}}
+\newcommand{\sfou}{{\scriptscriptstyle 4}}
+\newcommand{\sfiv}{{\scriptscriptstyle 5}}
+\newcommand{\ssix}{{\scriptscriptstyle 6}}
+\newcommand{\ssev}{{\scriptscriptstyle 7}}
+\newcommand{\seig}{{\scriptscriptstyle 8}}
+\newcommand{\snin}{{\scriptscriptstyle 9}}
+\newcommand{\sten}{{\scriptscriptstyle 10}}
+\newcommand{\half}{{\scriptscriptstyle 1/2}}
+%------------------------------------------------------------------------------
+%       -> abbreviations for common math mode symbols
+%------------------------------------------------------------------------------
+\newcommand{\MSbar}{\hbox{$\overline{\rm MS}$}\xspace}
+\newcommand{\UO}{{\rm U}(1)_\sY}
+\newcommand{\SUT}{{\rm SU}(2)_\sL}
+\newcommand{\SUTH}{{\rm SU}(3)_c}
+\newcommand{\SUTUO}{{\rm SU}(2)_\sL\times{\rm U}(1)_\sY}
+\newcommand{\SUTSUTUO}{{\rm SU}(3)_c\times{\rm SU}(2)_\sL\times{\rm U}(1)_\sY}
+\newcommand{\alsmu}[1]{{\alpha_s(\mu_{#1}^2)}}
+\newcommand{\alsmz}{{\alpha_s(M_Z^2)}}
+\newcommand{\alsqs}{{\alpha_s(Q^2)}}
+\newcommand{\als}{\alpha_s}
+\newcommand{\ctwb}{\cos\theta_W}
+\newcommand{\ctws}{\cos^2\theta_W}
+\newcommand{\diff}{{\rm d}}
+\newcommand{\gh}{{\gamma_h}}
+\newcommand{\lsq}[1]{{\lambda_{#1}}}
+\newcommand{\lsqp}[1]{{\lambda'_{#1}}}
+\newcommand{\lsqpp}[1]{{{\lambda''}_{#1}}}
+\newcommand{\rnge}{\hbox{$\,\text{--}\,$}}
+\newcommand{\sihat}{{\hat\sigma}}
+\newcommand{\sitil}{{\tilde\sigma}}
+\newcommand{\stwb}{\sin\theta_W}
+\newcommand{\stwss}{\sin^4\theta_W}
+\newcommand{\stws}{\sin^2\theta_W}
+\newcommand{\ta}{{\theta^\ast}}
+\newcommand{\tilR}{\tilde R}
+\newcommand{\tilS}{\tilde S}
+\newcommand{\tilU}{\tilde U}
+\newcommand{\tilV}{\tilde V}
+\newcommand{\tl}{{\theta_\ell}}
+\newcommand{\tw}{\theta_W}
+%------------------------------------------------------------------------------
+%       -> roman character combinations to be used in math mode, mainly
+%          sub- or superscripts
+%------------------------------------------------------------------------------
+\newcommand{\Born}{{\rm Born}}
+\newcommand{\BR}{{\rm BR}}
+\newcommand{\CC}{{\rm CC}}
+\newcommand{\CI}{{\rm CI}}
+\newcommand{\CJ}{{\rm CJ}}
+\newcommand{\DA}{{\rm DA}}
+\newcommand{\DCA}{{\rm DCA}}
+\newcommand{\GRV}{{\rm GRV}}
+\newcommand{\IC}{{\rm IC}}
+\newcommand{\ISR}{{\rm ISR}}
+\newcommand{\IP}{{\rm I$\kern-0.01667em$P}\xspace}
+\newcommand{\JB}{{\rm JB}}
+\newcommand{\LL}{{\rm LL}}
+\newcommand{\LQ}{{\rm LQ}}
+\newcommand{\LR}{{\rm LR}}
+\newcommand{\MC}{{\rm MC}}
+\newcommand{\NC}{{\rm NC}}
+\newcommand{\NS}{{\rm NS}}
+\newcommand{\QPM}{{\rm QPM}}
+\newcommand{\RL}{{\rm RL}}
+\newcommand{\RPv}{{{\not R}_P}}
+\newcommand{\RR}{{\rm RR}}
+\newcommand{\SM}{{\rm SM}}
+\newcommand{\bkg}{{\rm bkg}}
+\newcommand{\cut}{{\rm cut}}
+\newcommand{\data}{{\rm data}}
+\newcommand{\sdet}{{\rm det}}
+\newcommand{\dof}{{\rm dof}}
+\newcommand{\eff}{{\rm eff}}
+\newcommand{\elm}{{\rm elm}}
+\newcommand{\evt}{{\rm evt}}
+\newcommand{\exc}{{\rm exc}}
+\newcommand{\fit}{{\rm fit}}
+\newcommand{\had}{{\rm had}}
+\newcommand{\jet}{{\rm jet}}
+\newcommand{\meas}{{\rm meas}}
+\newcommand{\miss}{{\rm miss}}
+\newcommand{\obs}{{\rm obs}}
+\newcommand{\pnt}{{\rm pnt}}
+\newcommand{\sL}{{\rm L}}
+\newcommand{\sR}{{\rm R}}
+\newcommand{\sS}{{\rm S}}
+\newcommand{\sT}{{\rm T}}
+\newcommand{\sY}{{\rm Y}}
+\newcommand{\sca}{{\rm sca}}
+\newcommand{\sexp}{{\rm exp}}
+\newcommand{\sint}{{\rm int}}
+\newcommand{\smin}{{\rm min}}
+\newcommand{\smax}{{\rm max}}
+\newcommand{\srad}{{\rm rad}}
+\newcommand{\sthe}{{\rm the}}
+\newcommand{\sys}{{\rm sys}}
+\newcommand{\tot}{{\rm tot}}
+\newcommand{\true}{{\rm true}}
+%------------------------------------------------------------------------------
+%       -> some calligraphic symbols and applications
+%------------------------------------------------------------------------------
+\newcommand{\Cor}{{\cal C}}
+\newcommand{\F}{{\cal F}}
+\newcommand{\Lumi}{{\cal L}}
+\newcommand{\Prob}{{\cal P}}
+\newcommand{\ord}[1]{{\cal O}(#1)}
+\newcommand{\ordlr}[1]{{\cal O}\left(#1\right)}
+%------------------------------------------------------------------------------
+%       -> some math symbols (+,-,...) for usage as mathchar's
+%------------------------------------------------------------------------------
+\mathchardef\qsm=63
+\mathchardef\pls=43
+\mathchardef\mns=512
+\mathchardef\plm=518
+\mathchardef\eql=61
+\mathchardef\smallleft=300
+\mathchardef\smallright=301
+\mathchardef\les=316
+\mathchardef\gre=318
+\mathchardef\leq=532
+\mathchardef\grq=533
+%------------------------------------------------------------------------------
+%       Additional functionality for tables and figures
+%       -----------------------------------------------
+%       -> alignment tools for tables
+%------------------------------------------------------------------------------
+\newcommand{\cA}{{\phantom{0}}}
+\newcommand{\cB}{{\phantom{00}}}
+\newcommand{\cC}{{\phantom{000}}}
+\newcommand{\cD}{{\phantom{0000}}}
+\newcommand{\cAp}{{\phantom{0.}}}
+\newcommand{\cM}{{\phantom{\mns}}}
+\newcommand{\cP}{{\phantom{\pls}}}
+%------------------------------------------------------------------------------
+%       -> comments on figures (allow to add axodraw and picture items)
+%------------------------------------------------------------------------------
+\catcode`\@=11 % @ signs are now treated as letters
+\newcounter{pict@width}
+\newcounter{pict@height}
+\newlength{\pict@scale}
+\setlength{\pict@scale}{0.1mm}
+\newcommand{\psfigadd}[4]{%
+\setcounter{pict@width}{1*\ratio{#2+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@height}{1*\ratio{#3+\pict@scale/2}{\pict@scale}}
+\setlength{\unitlength}{\pict@scale}
+\hbox to #2{\hspace{-\fill}\begin{picture}(\thepict@width,\thepict@height)
+\put(0,0){\psfig{figure=#1,width=#2,height=#3,clip=}}
+\SetScale{0.283466457}
+\SetWidth{1.763889}
+{#4}
+\end{picture}}
+}
+\newcounter{pict@widthfst}
+\newcounter{pict@widthscd}
+\newcounter{pict@widthtot}
+\newcommand{\psfigaddtwo}[7]{%
+\setcounter{pict@widthfst}{1*\ratio{#2+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@widthscd}{1*\ratio{#2+#4+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@widthtot}{1*\ratio{#2+#4+#6+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@height}{1*\ratio{#3+\pict@scale/2}{\pict@scale}}
+\setlength{\unitlength}{\pict@scale}
+\hbox{\hspace{-\fill}\begin{picture}(\thepict@widthtot,\thepict@height)
+\put(0,0){\psfig{figure=#1,width=#2,height=#3,clip=}}
+\put(\thepict@widthscd,0){\psfig{figure=#5,width=#6,height=#3,clip=}}
+\SetScale{0.283466457}
+\SetWidth{1.763889}
+{#7}
+\end{picture}}
+}
+\newcommand{\psfigror}[4]{%
+\setcounter{pict@width}{1*\ratio{#2+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@height}{1*\ratio{#3+\pict@scale/2}{\pict@scale}}
+\setlength{\unitlength}{\pict@scale}
+\hbox{\begin{picture}(\thepict@width,\thepict@height)
+\put(0,\thepict@height){\psfig{figure=#1,width=#3,height=#2,clip=,angle=270}}
+\SetScale{0.283466457}
+\SetWidth{1.763889}
+{#4}
+\end{picture}}
+}
+\newcommand{\psfigrol}[4]{%
+\setcounter{pict@width}{1*\ratio{#2+\pict@scale/2}{\pict@scale}}
+\setcounter{pict@height}{1*\ratio{#3+\pict@scale/2}{\pict@scale}}
+\setlength{\unitlength}{\pict@scale}
+\hbox{\begin{picture}(\thepict@width,\thepict@height)
+\put(0,0){\psfig{figure=#1,width=#3,height=#2,clip=,angle=90}}
+\SetScale{0.283466457}
+\SetWidth{1.763889}
+{#4}
+\end{picture}}
+}
+\catcode`\@=12 % @ signs are no longer letters
+%------------------------------------------------------------------------------
+%       -> narrow figures in list environment
+%------------------------------------------------------------------------------
+\newlength\listtextwidth
+\newcommand{\shiftfloat}[1]{
+  \setlength{\listtextwidth}{\textwidth}
+  \addtolength{\listtextwidth}{-#1}}
+%------------------------------------------------------------------------------
+%       -> "none" marker
+%------------------------------------------------------------------------------
+\newcommand{\none}{\hbox{---}}
+%------------------------------------------------------------------------------
+%       -> protected commands in captions
+%------------------------------------------------------------------------------
+\newcommand{\pcite}[1]{{\protect\cite{#1}}}
+\newcommand{\pnl}{\protect{\newline}}
+%------------------------------------------------------------------------------
+%       -> pseudo-footnotes for tables
+%------------------------------------------------------------------------------
+\catcode`\@=11 % @ signs are now treated as letters
+\newlength{\@tabfninsert}
+\newlength{\@tabfnwidth}
+\newcommand{\tabfootnote}[2]{%
+  \setlength{\@tabfninsert}{0.8em}
+  \setlength{\@tabfnwidth}{\textwidth}
+  \addtolength{\@tabfnwidth}{-\@tabfninsert}
+  \addtolength{\@tabfnwidth}{-0.4em}
+  \noindent\makebox[\@tabfninsert][r]{\footnotesize$^{#1}$\hfil}\hfill%
+  \parbox[t]{\@tabfnwidth}{\footnotesize #2\hfill}}
+\catcode`\@=12 % @ signs are no longer letters
+
+
+% Some other macros used in the sample text
+\def\st{\scriptstyle}
+\def\sst{\scriptscriptstyle}
+\def\mco{\multicolumn}
+\def\epp{\epsilon^{\prime}}
+\def\vep{\varepsilon}
+\def\ra{\rightarrow}
+\def\ppg{\pi^+\pi^-\gamma}
+\def\vp{{\bf p}}
+\def\ko{K^0}
+\def\kb{\bar{K^0}}
+\def\al{\alpha}
+\def\ab{\bar{\alpha}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\CPbar{\hbox{{\rm CP}\hskip-1.80em{/}}}
+
+
+
+\def\BsDsH{B_{s}\to D_{s} h}
+
+\def\BsDsPi{B_{s}\to D_{s} \pi}
+\def\BsDsK{B_{s}\to D_{s} K}
+
+\def\Bpi{B_{s}\to D_{s}\pi}
+\def\Bpiminus{B_{s}^{0}\to D_{s}^{-}\pi^{+}}
+\def\Bbarpiminus{\bar{B}_{s}^{0}\to D_{s}^{-}\pi^{+}}
+\def\Bbarpiplus{\bar{B_{s}^{0}}\to D_{s}^{+}\pi^{-}}
+\def\DsPiminus{D_{s}^{-}\pi^{+}}
+\def\DsPiplus{D_{s}^{+}\pi^{-}}
+
+\def\BK{B_{s}\to D_{s}K}
+\def\BKminusplus{B_{s}^{0}\to D_{s}^{\mp}K^{\pm}}
+\def\BbarKplusminus{\bar{B}_{s}^{0}\to D_{s}^{\pm}K^{\mp}}
+\def\BKminus{B_{s}^{0}\to D_{s}^{-}K^{+}}
+\def\BKplus{B_{s}^{0}\to D_{s}^{+}K^{-}}
+\def\BbarKminus{\bar{B_{s}^{0}}\to D_{s}^{-}K^{+}}
+\def\BbarKplus{\bar{B_{s}^{0}}\to D_{s}^{+}K^{-}}
+
+\def\dMs{\Delta m_{s}}
+\def\resdMs{\sigma(\Delta m_{s})}
+\def\weak{\gamma +\phi_s}
+\def\resweak{\sigma(\gamma +\phi_s)}
+\def\strong{\Delta_{T1/T2}}
+\def\resstrong{\sigma(\Delta_{T1/T2})}
+\def\pt{\tau_{rec}}
+\def\pterror{\Delta\tau_{rec}}
+\def\dgammaovergamma{\Delta \Gamma_{s}/\Gamma_{s}}
+
+\def\normlamsq{|\lambda_{f}|^{2}}
+\def\normlambarsq{|\bar{\lambda}_{\bar{f}}|^{2}}
+\def\deltag{\frac{\Delta \Gamma_{s} \, t}{2}}
+\def\dMst{\Delta m_{s} \, t}
+\def\poverq{\Big|\frac{p}{q}\Big|^{2}}
+\def\qoverp{\Big|\frac{q}{p}\Big|^{2}}
+
+\def\ADG{A^{\Delta\Gamma}_{f}}
+\def\ADGb{A^{\Delta\Gamma}_{\bar{f}}}

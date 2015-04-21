@@ -1,0 +1,154 @@
+% ----------------
+% Packages to load
+% ----------------
+% A load of standard graphics commands
+\usepackage{feynmp}
+%\usepackage{feynmf}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsRule{*}{mps}{*}{} 
+%\usepackage[dvips]{graphics}  % standard graphics commands
+%\usepackage{epsfig}           % EPS manipulation with \epsfig
+\usepackage{amssymb,latexsym}
+\usepackage{amsmath}
+\usepackage{latexsym}         % extra maths symbols
+%\usepackage{indentfirst}      % identation also on 1st paragraph of a section
+\usepackage{alltt}
+\usepackage{fancyhdr}
+\usepackage{supertabular}
+\usepackage{fancybox}
+\usepackage{moreverb}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{psfrag}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{flafter}
+
+
+\newenvironment{fminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+\newlength{\FramedVerbWidth}
+\setlength{\FramedVerbWidth}{\textwidth}
+\addtolength{\FramedVerbWidth}{1.3cm}
+
+\newenvironment{FramedVerb}%
+{\VerbatimEnvironment\vskip 3mm\noindent\small%
+\begin{Sbox}\begin{minipage}{\FramedVerbWidth}\begin{alltt}}%
+{\end{alltt}\end{minipage}\end{Sbox}
+\setlength{\fboxsep}{8pt}\fbox{\TheSbox}\normalsize\vskip 3mm}
+
+
+% -------------
+% Page settings
+% -------------
+%\renewcommand{\baselinestretch}{1.2}
+\def\dline{ \renewcommand{\baselinestretch}{1.5}
+            \small
+            \normalsize
+          }
+\def\sline{ \renewcommand{\baselinestretch}{1}
+            \small
+            \normalsize
+          }
+
+% ------------------------------
+% Space above and below formulae
+% ------------------------------
+%\addtolength{\abovedisplayskip}{1mm}
+%\addtolength{\belowdisplayskip}{1mm}
+%\addtolength{\abovedisplayshortskip}{1mm}
+%\addtolength{\belowdisplayshortskip}{1mm}
+
+
+%--------------------
+% Horizontal spacings
+%--------------------
+%\setlength{\hoffset}%
+%          {-1.in}
+%\setlength{\evensidemargin}{2.5cm}
+%\setlength{\oddsidemargin}{3.0cm}
+%\setlength{\textwidth}{\paperwidth}
+%\addtolength{\textwidth}{-\evensidemargin}
+%\addtolength{\textwidth}{-\oddsidemargin}
+%------------------
+% Vertical spacings
+%------------------
+%\setlength{\voffset}{-0.5cm}
+%\setlength{\topmargin}{0.5cm}
+%\setlength{\headheight}{0.5cm}
+%\setlength{\headsep}{0.5cm}
+%\setlength{\footskip}{1.0cm}
+%\newlength{\footmargin}
+%\setlength{\footmargin}{2.0cm}
+%\setlength{\textheight}{\paperheight}
+%\addtolength{\textheight}{-1.in}
+%\addtolength{\textheight}{-\voffset}
+%\addtolength{\textheight}{-\topmargin}
+%\addtolength{\textheight}{-\headheight}
+%\addtolength{\textheight}{-\headsep}
+%\addtolength{\textheight}{-\footskip}
+%\addtolength{\textheight}{-\footmargin}
+%-----------------
+% Float parameters
+%-----------------
+%\setlength{\floatsep}{6pt plus 3pt minus 1pt}
+%\setlength{\textfloatsep}{10pt plus 5pt minus 3pt}
+%\renewcommand{\topfraction}{0.9}
+%\renewcommand{\bottomfraction}{0.9}
+%\renewcommand{\textfraction}{0.1}
+
+%--------------------------------
+% Settings for package "fancyhdr"
+%--------------------------------
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\rm\bf \thepage}
+\fancyhead[LO]{\rm \rightmark}
+\fancyhead[RE]{\rm \leftmark}
+%\lhead{}
+%\rhead{}
+%\cfoot{\bfseries \thepage}
+%\lhead{\bfseries \slshape E. Rodrigues}
+%\rhead{\bfseries \slshape Meeting, $1^{st}$ January 2003}
+%\cfoot{\bfseries \slshape Some Title}
+%\renewcommand{\headrulewidth}{0.7pt}
+%\renewcommand{\footrulewidth}{0.7pt}
+
+%------------------------------------
+% Settings for Doxygen-produced latex
+%------------------------------------
+\newenvironment{CompactList}
+{\begin{list}{}{
+  \setlength{\leftmargin}{0.5cm}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{0pt}
+  \renewcommand{\makelabel}{}}}
+{\end{list}}
+%
+\newenvironment{CompactItemize}
+{
+  \begin{itemize}
+  \setlength{\itemsep}{-3pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+}
+{\end{itemize}}
+%
+\newenvironment{Desc}
+{\begin{list}{}
+  {
+    \settowidth{\labelwidth}{40pt}
+    \setlength{\leftmargin}{\labelwidth}
+    \setlength{\parsep}{0pt}
+    \setlength{\itemsep}{-4pt}
+    \renewcommand{\makelabel}{\entrylabel}
+  }
+}
+{\end{list}}
